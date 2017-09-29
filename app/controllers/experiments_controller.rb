@@ -2,7 +2,7 @@ class ExperimentsController < ApplicationController
   before_action :find_experiment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @experiments = Experiment.all
+    @experiments = Experiment.all.order("created_at DESC")
   end
 
   def new
