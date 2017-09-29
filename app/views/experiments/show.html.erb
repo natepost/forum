@@ -1,0 +1,9 @@
+<h1><%= @experiment.title %></h1>
+<p><%= @experiment.content %></p>
+
+<%= link_to "Edit", edit_experiment_path(@experiment) %>
+<%= link_to "Destroy", experiment_path(@experiment), method: :delete, data: { confirm: "That's crazy... you sure?"} %>
+<%= link_to "Home", root_path %>
+<br />
+
+<%= link_to "New Experiment", new_experiment_path %>
