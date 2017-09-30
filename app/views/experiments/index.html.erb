@@ -1,8 +1,8 @@
-<%= link_to "New Experiment", new_experiment_path %>
-
 <h1>All the experiments</h1>
 <%= @experiments.each do |experiment| %>
   <h2><%= experiment.title %></h2>
-  <p><%= time_ago_in_words(experiment.created_at) %> ago.</p>
+  <p>Published <%= time_ago_in_words(experiment.created_at) %>
+  by
+  User # <%= experiment.user_id %></p>
   <p><%= experiment.content %> </p>
 <% end %>

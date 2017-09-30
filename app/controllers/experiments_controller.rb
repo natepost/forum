@@ -6,14 +6,14 @@ class ExperimentsController < ApplicationController
   end
 
   def new
-    @experiment = Experiment.new
+    @experiment = current_user.experiments.build
   end
 
   def show
   end
 
   def create
-    @experiment = Experiment.new(experiment_params)
+    @experiment = current_user.experiments.build(experiment_params)
 
     if @experiment.save
       redirect_to @experiment
